@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root [data-theme="light"] {
+  --text-color: #171717;
+  --bkg-color: #fff;
+}
+
+:root[data-theme="dark"] {
+  --text-color: #ededed;
+  --bkg-color: #0a0a0a;
+}
+
+.dark {
+  --text-color: #ededed;
+  --bkg-color: #0a0a0a;
+  --p-color: #999;
+  --card-hover: #;
+  /* --anchor-color: #809fff; */
+}
+.light {
+  --text-color: #171717;
+  --bkg-color: #fff;
+  --p-color: #333;
+  /* --anchor-color: #0033cc; */
+}
+@media (prefer-color-scheme: dark) {
+  :root {
+    --text-color: #ededed;
+    --bkg-color: s #0a0a0a;
+    --anchor-color: #809fff;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #171717;
+    --bkg-color: #fff;
+    --anchor-color: #0033cc;
+  }
+}
+
+body {
+  color: var(--text-color);
+  background: var(--bkg-color);
+  transition: color 0.5s, background-color 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #0e0;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #0a0;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a2;
+}
+h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+p span {
+  font-size: 1.2rem;
+}
+p {
+  color: var(--p-color);
+}
+
+/* 在你的CSS文件中定义动画 */
+@keyframes underlineAnimation {
+  from {
+    border-bottom-width: 0;
+  }
+  to {
+    border-bottom-width: 2px;
+  }
+}
+
+/* 应用动画到类 */
+.animate-underline {
+  animation: underlineAnimation 0.5s ease-in-out;
+}
+@layer components {
+}
